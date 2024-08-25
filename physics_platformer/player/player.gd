@@ -2,7 +2,7 @@ class_name Player
 extends RigidBody2D
 
 const WALK_ACCEL = 1000.0
-const WALK_DEACCEL = 1000.0
+const WALK_DEACCEL = 100000.0
 const WALK_MAX_VELOCITY = 200.0
 const AIR_ACCEL = 250.0
 const AIR_DEACCEL = 250.0
@@ -44,6 +44,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var move_left := Input.is_action_pressed(&"move_left")
 	var move_right := Input.is_action_pressed(&"move_right")
 	var jump := Input.is_action_pressed(&"jump")
+	var pressed_jump := Input.is_action_just_pressed(&"jump")
 	var shoot := Input.is_action_pressed(&"shoot")
 	var spawn := Input.is_action_just_pressed(&"spawn")
 
@@ -106,7 +107,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			velocity.x = signf(velocity.x) * xv
 
 		# Check jump.
-		if not jumping and jump:
+		if not jumping and jump and pressed_jump:
 			velocity.y = -JUMP_VELOCITY
 			jumping = true
 			stopping_jump = false

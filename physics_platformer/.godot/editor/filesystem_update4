@@ -1,0 +1,6 @@
+res://stage.tscn
+res://enemy/enemy.gd
+res://tileset.tres
+res://player/player.gd
+res://enemy/enemy.tscn
+res://player/player.tscn
