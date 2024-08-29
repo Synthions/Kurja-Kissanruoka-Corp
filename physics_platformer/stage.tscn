@@ -1,13 +1,7 @@
-<<<<<<< HEAD
-[gd_scene load_steps=26 format=3 uid="uid://b53muvlsw1tx3"]
+[gd_scene load_steps=26 format=3 uid="uid://ca5mso2nwjhjs"]
 
 [ext_resource type="TileSet" uid="uid://rowrak7ls50v" path="res://tileset.tres" id="1"]
 [ext_resource type="Script" path="res://stage.gd" id="1_krc1x"]
-=======
-[gd_scene load_steps=24 format=3 uid="uid://b53muvlsw1tx3"]
-
-[ext_resource type="TileSet" uid="uid://rowrak7ls50v" path="res://tileset.tres" id="1"]
->>>>>>> 45a0079625c4673f24d7f71c166e1f2960878d4a
 [ext_resource type="PackedScene" uid="uid://6uilf6rad880" path="res://coin/coin.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://dtbrdmojpvetu" path="res://platform/moving_platform.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://rxbjx7rhfd8k" path="res://background/seesaw.tscn" id="4"]
@@ -16,10 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://daqqtote00syu" path="res://enemy/enemy.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://csdn3dwkaprow" path="res://background/parallax_bg.tscn" id="8"]
 [ext_resource type="AudioStream" uid="uid://gunv00cij80t" path="res://audio/music.ogg" id="9"]
-<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://dypcp3fjlyukb" path="res://pause_menu.tscn" id="11_46dbf"]
-=======
->>>>>>> 45a0079625c4673f24d7f71c166e1f2960878d4a
 
 [sub_resource type="Animation" id="Animation_oxal6"]
 length = 0.001
@@ -139,10 +130,7 @@ friction = 0.0
 friction = 0.0
 
 [node name="Stage" type="Node2D"]
-<<<<<<< HEAD
 script = ExtResource("1_krc1x")
-=======
->>>>>>> 45a0079625c4673f24d7f71c166e1f2960878d4a
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(2, 0)
@@ -370,7 +358,6 @@ instructions."
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9")
 autoplay = true
-<<<<<<< HEAD
 
 [node name="PauseMenu" parent="." instance=ExtResource("11_46dbf")]
 modulate = Color(1, 0.0627451, 1, 1)
@@ -378,5 +365,3 @@ offset_left = 519.0
 offset_top = 484.0
 offset_right = 519.0
 offset_bottom = 484.0
-=======
->>>>>>> 45a0079625c4673f24d7f71c166e1f2960878d4a
