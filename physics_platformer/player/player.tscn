@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://bbxsp4gp554vh"]
+[gd_scene load_steps=21 format=3 uid="uid://bbxsp4gp554vh"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://dh57uloeigwj6" path="res://player/player.webp" id="2_675nc"]
 [ext_resource type="Texture2D" uid="uid://7sv64orewgmb" path="res://player/bullet.png" id="3"]
+[ext_resource type="Script" path="res://player/TestText.gd" id="6_llcxn"]
 [ext_resource type="AudioStream" uid="uid://gw2a4ii0oby2" path="res://audio/sound_shoot.wav" id="8"]
 [ext_resource type="AudioStream" uid="uid://bpyko2i13mj0v" path="res://audio/sound_jump.wav" id="9"]
 
@@ -207,7 +208,7 @@ script = ExtResource("1")
 texture = ExtResource("2_675nc")
 hframes = 16
 vframes = 2
-frame = 22
+frame = 16
 
 [node name="Smoke" type="CPUParticles2D" parent="Sprite2D"]
 self_modulate = Color(1, 1, 1, 0.26702)
@@ -276,3 +277,16 @@ stream = ExtResource("8")
 
 [node name="SoundJump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="TestText" type="Label" parent="CanvasLayer"]
+offset_left = 20.0
+offset_top = 23.0
+offset_right = 137.0
+offset_bottom = 49.0
+text = "ahahahahahah"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_llcxn")

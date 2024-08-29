@@ -1,6 +1,8 @@
 class_name Player
 extends RigidBody2D
 
+
+@onready var testtext := $CanvasLayer/TestText
 const WALK_ACCEL = 1000.0
 const WALK_DEACCEL = 100000.0
 const WALK_MAX_VELOCITY = 200.0
@@ -24,6 +26,8 @@ var floor_h_velocity: float = 0.0
 
 var airborne_time: float = 1e20
 var shoot_time: float = 1e20
+
+var health := 100
 
 @onready var sound_jump := $SoundJump as AudioStreamPlayer2D
 @onready var sound_shoot := $SoundShoot as AudioStreamPlayer2D
@@ -112,6 +116,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			jumping = true
 			stopping_jump = false
 			sound_jump.play()
+			damaged(10)
 
 		# Check siding.
 		if velocity.x < 0 and move_left:
@@ -207,3 +212,12 @@ func _spawn_enemy_above() -> void:
 	var enemy := ENEMY_SCENE.instantiate() as RigidBody2D
 	enemy.position = position + 50 * Vector2.UP
 	get_parent().add_child(enemy)
+
+func damaged(dmg:int):
+#	if event.is_action_pressed(&"jump") :
+	health -= dmg
+	if health < 0:
+		health = 0
+	testtext.update_health(health)
+	print("hehehe")
+
