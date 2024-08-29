@@ -32,5 +32,5 @@ libraries = {
 }
 
 [node name="KurjaKissanruoka" type="Sprite2D" parent="."]
-position = Vector2(113, -0.126834)
+position = Vector2(113, 2.08165e-12)
 texture = ExtResource("1_3bfjf")
