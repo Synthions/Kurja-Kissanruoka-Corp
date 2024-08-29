@@ -32,5 +32,9 @@ libraries = {
 }
 
 [node name="KurjaKissanruoka" type="Sprite2D" parent="."]
+<<<<<<< HEAD
 position = Vector2(113, 2.08165e-12)
+=======
+position = Vector2(113, -0.126834)
+>>>>>>> 45a0079625c4673f24d7f71c166e1f2960878d4a
 texture = ExtResource("1_3bfjf")
