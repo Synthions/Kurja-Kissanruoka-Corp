@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh2ipwimj3sby"]
+[gd_scene load_steps=3 format=3 uid="uid://dh2ipwimj3sby"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_wgo3f"]
+[ext_resource type="AudioStream" uid="uid://73gyuhq1mxjt" path="res://audio/menyy.wav" id="2_plj2s"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -31,6 +32,10 @@ text = "Start"
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_plj2s")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
