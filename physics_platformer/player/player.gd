@@ -1,6 +1,9 @@
 class_name Player
 extends RigidBody2D
 
+@onready var healthBlocker := $"CanvasLayer/Area select/Selectable area/Void"
+
+var blockerWidth: float
 
 @onready var testtext := $CanvasLayer/TestText
 const WALK_ACCEL = 1000.0
@@ -36,6 +39,10 @@ var health := 100
 @onready var animation_player := $AnimationPlayer as AnimationPlayer
 @onready var bullet_shoot := $BulletShoot as Marker2D
 
+
+func _ready() -> void:
+	blockerWidth = healthBlocker.scale.x
+	update_health(100)
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var velocity := state.get_linear_velocity()
@@ -219,5 +226,8 @@ func damaged(dmg:int):
 	if health < 0:
 		health = 0
 	testtext.update_health(health)
-	print("hehehe")
-
+	update_health(health)
+	
+func update_health(health: int) -> void:
+	var multiplier = 1.0 - (health / 100.0)
+	healthBlocker.scale.x = multiplier*blockerWidth
