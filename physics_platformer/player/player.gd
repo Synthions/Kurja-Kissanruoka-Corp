@@ -3,8 +3,6 @@ extends RigidBody2D
 
 @onready var healthBlocker := $"CanvasLayer/Area select/Selectable area/Void"
 
-var blockerWidth: float
-
 @onready var testtext := $CanvasLayer/TestText
 const WALK_ACCEL = 1000.0
 const WALK_DEACCEL = 100000.0
@@ -15,6 +13,7 @@ const JUMP_VELOCITY = 380.0
 const STOP_JUMP_FORCE = 450.0
 const MAX_SHOOT_POSE_TIME = 0.3
 const MAX_FLOOR_AIRBORNE_TIME = 0.15
+const ENEMY_COLLISION_DAMAGE = 10 #might want to vhange this
 
 const BULLET_SCENE = preload("res://player/bullet.tscn")
 const ENEMY_SCENE = preload("res://enemy/enemy.tscn")
@@ -32,6 +31,8 @@ var shoot_time: float = 1e20
 
 var health := 100
 
+var blockerWidth: float
+
 @onready var sound_jump := $SoundJump as AudioStreamPlayer2D
 @onready var sound_shoot := $SoundShoot as AudioStreamPlayer2D
 @onready var sprite := $Sprite2D as Sprite2D
@@ -43,6 +44,8 @@ var health := 100
 func _ready() -> void:
 	blockerWidth = healthBlocker.scale.x
 	update_health(100)
+	#this is just making the body_entered call connect to on_body_entered in the code
+	connect("body_entered", Callable(self, "_on_body_entered"))
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var velocity := state.get_linear_velocity()
@@ -58,9 +61,13 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var pressed_jump := Input.is_action_just_pressed(&"jump")
 	var shoot := Input.is_action_pressed(&"shoot")
 	var spawn := Input.is_action_just_pressed(&"spawn")
+	var selfdamage := Input.is_action_just_pressed(&"selfdamage")
 
 	if spawn:
 		_spawn_enemy_above.call_deferred()
+
+	if selfdamage:
+		selfdamage(10)
 
 	# Deapply previous floor velocity.
 	velocity.x -= floor_h_velocity
@@ -123,7 +130,6 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			jumping = true
 			stopping_jump = false
 			sound_jump.play()
-			damaged(10)
 
 		# Check siding.
 		if velocity.x < 0 and move_left:
@@ -228,10 +234,17 @@ func damaged(dmg:int):
 		respawn()
 	testtext.update_health(health)
 	update_health(health)
-	
+
+func selfdamage(dmg:int):
+	damaged(dmg)
+
 func update_health(health: int) -> void:
 	var multiplier = 1.0 - (health / 100.0)
 	healthBlocker.scale.x = multiplier*blockerWidth
 
 func respawn():
 	get_tree().change_scene_to_file("res://respawn_menu.tscn")
+
+func _on_body_entered(body: Node) -> void:
+	if body is Enemy:
+		damaged(ENEMY_COLLISION_DAMAGE)
