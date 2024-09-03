@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://exun71uxk8w6"]
+
+[ext_resource type="Script" path="res://respawn_menu.gd" id="1_mhhc1"]
+
+[node name="respawn_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mhhc1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.009
+anchor_right = -0.009
+offset_left = 207.2
+offset_top = 150.0
+offset_right = 607.2
+offset_bottom = 300.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Respawn" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Respawn"
+
+[node name="Return to main menu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Return to Main Menu"
+
+[node name="Quit game" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit Game"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Respawn" to="." method="_on_respawn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Return to main menu" to="." method="_on_return_to_main_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit game" to="." method="_on_quit_game_pressed"]

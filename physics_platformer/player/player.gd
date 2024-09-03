@@ -225,9 +225,13 @@ func damaged(dmg:int):
 	health -= dmg
 	if health < 0:
 		health = 0
+		respawn()
 	testtext.update_health(health)
 	update_health(health)
 	
 func update_health(health: int) -> void:
 	var multiplier = 1.0 - (health / 100.0)
 	healthBlocker.scale.x = multiplier*blockerWidth
+
+func respawn():
+	get_tree().change_scene_to_file("res://respawn_menu.tscn")

@@ -278,10 +278,10 @@ position = Vector2(438, 272)
 position = Vector2(1554, 369)
 
 [node name="MovePlatforms" type="AnimationPlayer" parent="Props"]
+autoplay = "move"
 libraries = {
 "": SubResource("AnimationLibrary_el48w")
 }
-autoplay = "move"
 
 [node name="Seesaw" parent="Props" instance=ExtResource("4")]
 position = Vector2(1201.4, 424.76)
