@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ca5mso2nwjhjs"]
+[gd_scene load_steps=27 format=3 uid="uid://ca5mso2nwjhjs"]
 
 [ext_resource type="TileSet" uid="uid://rowrak7ls50v" path="res://tileset.tres" id="1"]
 [ext_resource type="Script" path="res://stage.gd" id="1_krc1x"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://csdn3dwkaprow" path="res://background/parallax_bg.tscn" id="8"]
 [ext_resource type="AudioStream" uid="uid://gunv00cij80t" path="res://audio/music.ogg" id="9"]
 [ext_resource type="PackedScene" uid="uid://dypcp3fjlyukb" path="res://pause_menu.tscn" id="11_46dbf"]
+[ext_resource type="PackedScene" uid="uid://b82rjtm2dg3h6" path="res://kissanruoka.tscn" id="12_nnxbx"]
 
 [sub_resource type="Animation" id="Animation_oxal6"]
 length = 0.001
@@ -383,3 +384,6 @@ offset_left = 519.0
 offset_top = 484.0
 offset_right = 519.0
 offset_bottom = 484.0
+
+[node name="kissanruoka" parent="." instance=ExtResource("12_nnxbx")]
+position = Vector2(371, 432)
