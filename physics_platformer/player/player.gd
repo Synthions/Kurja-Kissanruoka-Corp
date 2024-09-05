@@ -41,6 +41,7 @@ var blockerWidth: float
 @onready var sprite_smoke := sprite.get_node(^"Smoke") as CPUParticles2D
 @onready var animation_player := $AnimationPlayer as AnimationPlayer
 @onready var bullet_shoot := $BulletShoot as Marker2D
+@onready var sound_damaged := $SoundDamaged as AudioStreamPlayer2D
 
 
 func _ready() -> void:
@@ -236,11 +237,13 @@ func damaged(dmg:int, damager: Node = null, knockback_force: int = 800):
 	if damager != null:
 		if invincible: knockback_force *= 0.7 # while invincible player isn't inside a pinball machine
 		var knockback_direction = damager.global_position.direction_to(global_position) * Vector2(1,0.5)
+		if knockback_direction.y < 0: knockback_direction.y *= 0.5  # No spiking
 		apply_impulse(knockback_direction * knockback_force)
 	
 	#Take damage
 	if not invincible:
 		health -= dmg
+		sound_damaged.play()
 		
 		if health <= 0:
 			health = 0
