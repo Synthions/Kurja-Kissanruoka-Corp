@@ -320,3 +320,5 @@ position = Vector2(-0.5, 0)
 scale = Vector2(0.205832, 0.0274443)
 texture = ExtResource("8_2wyyi")
 script = ExtResource("9_1m0cq")
+
+[node name="Invincibility_timer" type="Timer" parent="."]

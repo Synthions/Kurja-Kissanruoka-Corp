@@ -5,7 +5,7 @@ extends RigidBody2D
 
 @onready var testtext := $CanvasLayer/TestText
 const WALK_ACCEL = 1000.0
-const WALK_DEACCEL = 100000.0
+var WALK_DEACCEL = 100000.0
 const WALK_MAX_VELOCITY = 200.0
 const AIR_ACCEL = 250.0
 const AIR_DEACCEL = 250.0
@@ -23,6 +23,8 @@ var siding_left := false
 var jumping := false
 var stopping_jump := false
 var shooting := false
+
+var invincible := false
 
 var floor_h_velocity: float = 0.0
 
@@ -226,14 +228,28 @@ func _spawn_enemy_above() -> void:
 	enemy.position = position + 50 * Vector2.UP
 	get_parent().add_child(enemy)
 
-func damaged(dmg:int):
-#	if event.is_action_pressed(&"jump") :
-	health -= dmg
-	if health < 0:
-		health = 0
-		respawn()
-	testtext.update_health(health)
-	update_health(health)
+func damaged(dmg:int, damager: Node = null, knockback_force: int = 800):
+	if not invincible:
+		health -= dmg
+		if health <= 0:
+			health = 0
+			die()
+		else:
+			invincibility()
+			
+		if damager != null:
+			var knockback_direction = damager.global_position.direction_to(global_position) * Vector2(1,0.5)
+			apply_impulse(knockback_direction * knockback_force)
+	#		print("FLY")
+		
+		testtext.update_health(health)
+		update_health(health)
+		return true
+	else:
+		return false
+		
+		
+	
 
 func selfdamage(dmg:int):
 	damaged(dmg)
@@ -242,9 +258,29 @@ func update_health(health: int) -> void:
 	var multiplier = 1.0 - (health / 100.0)
 	healthBlocker.scale.x = multiplier*blockerWidth
 
+func die():
+	respawn()
+
 func respawn():
 	get_tree().change_scene_to_file("res://respawn_menu.tscn")
 
 func _on_body_entered(body: Node) -> void:
 	if body is Enemy:
-		damaged(ENEMY_COLLISION_DAMAGE)
+		damaged(ENEMY_COLLISION_DAMAGE, body)
+
+func invincibility():
+	#print("invincibleing")
+	invincible = true
+	WALK_DEACCEL = 2000.0
+	for i in range(10):
+		await get_tree().create_timer(.05).timeout
+		if i % 2 == 0:
+			modulate.a = .5
+		else:
+			modulate.a = 1
+		if i>7:
+			WALK_DEACCEL = 100000.0
+	invincible = false
+	
+			
+
