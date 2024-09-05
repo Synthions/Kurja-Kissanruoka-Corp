@@ -229,27 +229,30 @@ func _spawn_enemy_above() -> void:
 	get_parent().add_child(enemy)
 
 func damaged(dmg:int, damager: Node = null, knockback_force: int = 800):
+	# Returns true if player recieved damage
+	# Returns false if player had i-frames during damage (not hit)
+	
+	# Knockback is applied even if invincible
+	if damager != null:
+		if invincible: knockback_force *= 0.7 # while invincible player isn't inside a pinball machine
+		var knockback_direction = damager.global_position.direction_to(global_position) * Vector2(1,0.5)
+		apply_impulse(knockback_direction * knockback_force)
+	
+	#Take damage
 	if not invincible:
 		health -= dmg
+		
 		if health <= 0:
 			health = 0
 			die()
 		else:
 			invincibility()
 			
-		if damager != null:
-			var knockback_direction = damager.global_position.direction_to(global_position) * Vector2(1,0.5)
-			apply_impulse(knockback_direction * knockback_force)
-	#		print("FLY")
-		
 		testtext.update_health(health)
 		update_health(health)
 		return true
-	else:
-		return false
+	return false
 		
-		
-	
 
 func selfdamage(dmg:int):
 	damaged(dmg)
@@ -269,10 +272,9 @@ func _on_body_entered(body: Node) -> void:
 		damaged(ENEMY_COLLISION_DAMAGE, body)
 
 func invincibility():
-	#print("invincibleing")
 	invincible = true
 	WALK_DEACCEL = 2000.0
-	for i in range(10):
+	for i in range(16):
 		await get_tree().create_timer(.05).timeout
 		if i % 2 == 0:
 			modulate.a = .5
@@ -283,4 +285,3 @@ func invincibility():
 	invincible = false
 	
 			
-
