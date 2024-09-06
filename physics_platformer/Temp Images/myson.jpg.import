@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf27gtb1d5in8"
-path="res://.godot/imported/Neliö4.png-253afcd75bf56e3076ee81d41eb5bbbd.ctex"
+uid="uid://cshctsjtpr2sm"
+path="res://.godot/imported/myson.jpg-5628bff5fab3807931f338dd16faec86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/Neliö4.png"
-dest_files=["res://.godot/imported/Neliö4.png-253afcd75bf56e3076ee81d41eb5bbbd.ctex"]
+source_file="res://Temp Images/myson.jpg"
+dest_files=["res://.godot/imported/myson.jpg-5628bff5fab3807931f338dd16faec86.ctex"]
 
 [params]
 

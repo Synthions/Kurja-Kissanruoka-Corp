@@ -17,6 +17,7 @@ const ENEMY_COLLISION_DAMAGE = 10 #might want to vhange this
 
 const BULLET_SCENE = preload("res://player/bullet.tscn")
 const ENEMY_SCENE = preload("res://enemy/enemy.tscn")
+const POPUP_SCENE = preload("res://Popups/Popup.tscn")
 
 var anim := ""
 var siding_left := false
@@ -65,12 +66,16 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var shoot := Input.is_action_pressed(&"shoot")
 	var spawn := Input.is_action_just_pressed(&"spawn")
 	var selfdamage := Input.is_action_just_pressed(&"selfdamage")
+	var popup := Input.is_action_just_pressed(&"testpopup")
 
 	if spawn:
 		_spawn_enemy_above.call_deferred()
 
 	if selfdamage:
 		selfdamage(10)
+
+	if popup:
+		_spawn_popup()
 
 	# Deapply previous floor velocity.
 	velocity.x -= floor_h_velocity
@@ -228,6 +233,14 @@ func _spawn_enemy_above() -> void:
 	var enemy := ENEMY_SCENE.instantiate() as RigidBody2D
 	enemy.position = position + 50 * Vector2.UP
 	get_parent().add_child(enemy)
+	
+func _spawn_popup() -> void:
+	print("spawned, I think")
+	var popup := POPUP_SCENE.instantiate() as Node2D
+	popup.position = Vector2(randf_range(90, 715), randf_range(80, 400))
+	$CanvasLayer.add_child(popup)
+	print(is_instance_valid(popup))
+	
 
 func damaged(dmg:int, damager: Node = null, knockback_force: int = 800):
 	# Returns true if player recieved damage

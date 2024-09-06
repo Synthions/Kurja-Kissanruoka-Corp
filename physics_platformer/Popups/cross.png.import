@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cupac0dnrbo7q"
-path="res://.godot/imported/Neliö3.png-967bf5ec8d67f809b75ac0f17a9a0aa7.ctex"
+uid="uid://cq6uurxnnwi7h"
+path="res://.godot/imported/cross.png-7efe041fe8d1aa8bc9d7fdae15ce4964.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/Neliö3.png"
-dest_files=["res://.godot/imported/Neliö3.png-967bf5ec8d67f809b75ac0f17a9a0aa7.ctex"]
+source_file="res://Popups/cross.png"
+dest_files=["res://.godot/imported/cross.png-7efe041fe8d1aa8bc9d7fdae15ce4964.ctex"]
 
 [params]
 
