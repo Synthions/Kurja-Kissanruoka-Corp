@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://snxy5rxhx8s4"]
+
+[ext_resource type="PackedScene" uid="uid://dveccj1no4bn" path="res://Popups/Popup1.tscn" id="1_0egfk"]
+[ext_resource type="Texture2D" uid="uid://gjmw65hxsoj4" path="res://Temp Images/lisan al-gaib.jpg" id="2_liaig"]
+
+[node name="Popup" instance=ExtResource("1_0egfk")]
+
+[node name="Background" parent="Popup holder/Popup border" index="0"]
+position = Vector2(2.5, -8.18754)
+scale = Vector2(0.26458, 0.233919)
+
+[node name="Image" parent="Popup holder/Popup border" index="1"]
+position = Vector2(2.5, -1.25)
+scale = Vector2(0.147391, 0.147391)
+texture = ExtResource("2_liaig")
+region_enabled = true
+region_rect = Rect2(47.2673, 109.857, 991.744, 709.285)

@@ -1,8 +1,12 @@
-[gd_scene load_steps=26 format=3 uid="uid://bbxsp4gp554vh"]
+[gd_scene load_steps=30 format=3 uid="uid://bbxsp4gp554vh"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://dh57uloeigwj6" path="res://player/player.webp" id="2_675nc"]
+[ext_resource type="PackedScene" uid="uid://dveccj1no4bn" path="res://Popups/Popup1.tscn" id="2_uvyut"]
 [ext_resource type="Texture2D" uid="uid://7sv64orewgmb" path="res://player/bullet.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://snxy5rxhx8s4" path="res://Popups/popup2.tscn" id="3_sorpb"]
+[ext_resource type="PackedScene" uid="uid://c7wwv8taahcag" path="res://Popups/popup3.tscn" id="4_vodfr"]
+[ext_resource type="PackedScene" uid="uid://bqg4c0kecma36" path="res://Popups/popup4.tscn" id="5_yasx7"]
 [ext_resource type="Script" path="res://player/TestText.gd" id="6_llcxn"]
 [ext_resource type="AudioStream" uid="uid://smbm4hs8nbom" path="res://audio/sound_damaged.wav" id="6_xn2ds"]
 [ext_resource type="Texture2D" uid="uid://cupac0dnrbo7q" path="res://Temp Images/Neliö3.png" id="7_mc6of"]
@@ -210,6 +214,7 @@ custom_integrator = true
 contact_monitor = true
 max_contacts_reported = 4
 script = ExtResource("1")
+popup_scenes = Array[PackedScene]([ExtResource("2_uvyut"), ExtResource("3_sorpb"), ExtResource("4_vodfr"), ExtResource("5_yasx7")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_675nc")

@@ -17,7 +17,9 @@ const ENEMY_COLLISION_DAMAGE = 10 #might want to vhange this
 
 const BULLET_SCENE = preload("res://player/bullet.tscn")
 const ENEMY_SCENE = preload("res://enemy/enemy.tscn")
-const POPUP_SCENE = preload("res://Popups/Popup.tscn")
+const POPUP_SCENE = preload("res://Popups/Popup1.tscn")
+
+@export var popup_scenes: Array[PackedScene] = []
 
 var anim := ""
 var siding_left := false
@@ -50,6 +52,8 @@ func _ready() -> void:
 	update_health(100)
 	#this is just making the body_entered call connect to on_body_entered in the code
 	connect("body_entered", Callable(self, "_on_body_entered"))
+		
+		
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var velocity := state.get_linear_velocity()
@@ -235,11 +239,9 @@ func _spawn_enemy_above() -> void:
 	get_parent().add_child(enemy)
 	
 func _spawn_popup() -> void:
-	print("spawned, I think")
-	var popup := POPUP_SCENE.instantiate() as Node2D
+	var popup := popup_scenes[randi() % popup_scenes.size()].instantiate() as Node2D
 	popup.position = Vector2(randf_range(90, 715), randf_range(80, 400))
 	$CanvasLayer.add_child(popup)
-	print(is_instance_valid(popup))
 	
 
 func damaged(dmg:int, damager: Node = null, knockback_force: int = 800):
