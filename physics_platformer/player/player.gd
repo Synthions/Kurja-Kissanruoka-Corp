@@ -65,13 +65,14 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	# Get player input.
 	var move_left := Input.is_action_pressed(&"move_left")
 	var move_right := Input.is_action_pressed(&"move_right")
+	var move_down := Input.is_action_pressed(&"move_down")
 	var jump := Input.is_action_pressed(&"jump")
 	var pressed_jump := Input.is_action_just_pressed(&"jump")
 	var shoot := Input.is_action_pressed(&"shoot")
 	var spawn := Input.is_action_just_pressed(&"spawn")
 	var selfdamage := Input.is_action_just_pressed(&"selfdamage")
 	var popup := Input.is_action_just_pressed(&"testpopup")
-
+	var is_on_one_way_platform := false
 	if spawn:
 		_spawn_enemy_above.call_deferred()
 
@@ -91,11 +92,14 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 
 	for contact_index in state.get_contact_count():
 		var collision_normal := state.get_contact_local_normal(contact_index)
-
+		var collider = state.get_contact_collider_object(contact_index)
 		if collision_normal.dot(Vector2(0, -1)) > 0.6:
 			found_floor = true
 			floor_index = contact_index
-
+			if collider is StaticBody2D and collider.is_in_group("one_way_platforms"):
+				is_on_one_way_platform = true
+				print("Pancakes")
+				break
 	# A good idea when implementing characters of all kinds,
 	# compensates for physics imprecision, as well as human reaction delay.
 	if shoot and not shooting:
@@ -211,6 +215,14 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	# Finally, apply gravity and set back the linear velocity.
 	velocity += state.get_total_gravity() * step
 	state.set_linear_velocity(velocity)
+	
+	if is_on_one_way_platform and move_down:
+		# Implement logic to fall through the platform
+		position.y += 1  # Move player slightly down to trigger collision exit
+		# Temporarily disable collision with one-way platforms
+		set_collision_mask_value(2, false)  # Assuming one-way platforms are on layer 3
+		await get_tree().create_timer(0.5).timeout
+		set_collision_mask_value(2, true)  # Re-enable collision
 
 
 func _shot_bullet() -> void:
@@ -303,3 +315,5 @@ func invincibility():
 	invincible = false
 	
 			
+
+

@@ -207,12 +207,13 @@ length = 18.0
 size = Vector2(172, 44)
 
 [node name="Player" type="RigidBody2D"]
+collision_mask = 3
 mass = 1.5
 physics_material_override = SubResource("1")
-lock_rotation = true
 custom_integrator = true
-contact_monitor = true
 max_contacts_reported = 4
+contact_monitor = true
+lock_rotation = true
 script = ExtResource("1")
 popup_scenes = Array[PackedScene]([ExtResource("2_uvyut"), ExtResource("3_sorpb"), ExtResource("4_vodfr"), ExtResource("5_yasx7")])
 
