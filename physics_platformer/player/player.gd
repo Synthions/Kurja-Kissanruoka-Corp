@@ -193,10 +193,10 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 
 	# Update siding.
 	if new_siding_left != siding_left:
-		if new_siding_left:
-			sprite.scale.x = 1
-		else:
+		if !new_siding_left:
 			sprite.scale.x = -1
+		else:
+			sprite.scale.x = 1
 
 		siding_left = new_siding_left
 

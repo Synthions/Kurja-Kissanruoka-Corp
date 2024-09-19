@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://crkm8guj5obto" path="res://background/scroll_bg_cloud_2.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://bb8syr2l4kbwp" path="res://background/scroll_bg_cloud_3.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://bitu0xunnhbjf" path="res://background/scroll_bg_fg_2.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://bdhblhpgjebrc" path="res://background/scroll_bg_fg_1.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://rn8bbrgt4o8o" path="res://New textures + music/bg_buildings.png" id="6_xhtjj"]
 
 [node name="ParallaxBg" type="ParallaxBackground"]
 scroll_base_scale = Vector2(0.7, 0)
@@ -69,6 +69,6 @@ motion_mirroring = Vector2(400, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Mount1"]
 position = Vector2(0, 113)
-texture = ExtResource("6")
+texture = ExtResource("6_xhtjj")
 centered = false
 region_rect = Rect2(0, 0, 400, 128)
