@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://daqqtote00syu"]
+[gd_scene load_steps=13 format=3 uid="uid://dkk1wtjtegmgs"]
 
-[ext_resource type="Script" path="res://enemy/enemy.gd" id="1_hjwkx"]
-[ext_resource type="Texture2D" uid="uid://crrmmbu8k46tl" path="res://enemy/enemy.png" id="2_org2d"]
-[ext_resource type="Texture2D" uid="uid://7sv64orewgmb" path="res://player/bullet.png" id="3_7unrb"]
-[ext_resource type="AudioStream" uid="uid://cfssio7r2t7wq" path="res://audio/sound_hit.wav" id="4_5rkwm"]
-[ext_resource type="AudioStream" uid="uid://bulmr2lpb7y4h" path="res://audio/sound_explode.wav" id="5_t2e2f"]
+[ext_resource type="AudioStream" uid="uid://bulmr2lpb7y4h" path="res://audio/sound_explode.wav" id="2_dhfhd"]
+[ext_resource type="AudioStream" uid="uid://cfssio7r2t7wq" path="res://audio/sound_hit.wav" id="3_itdfc"]
+[ext_resource type="Texture2D" uid="uid://crrmmbu8k46tl" path="res://enemy/enemy.png" id="4_e5fta"]
+[ext_resource type="Texture2D" uid="uid://7sv64orewgmb" path="res://player/bullet.png" id="5_vbli8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eyxlk"]
 
@@ -142,12 +141,11 @@ radius = 7.0
 offsets = PackedFloat32Array(0.5, 1)
 colors = PackedColorArray(1, 1, 1, 0.501961, 0, 0, 0, 0)
 
-[node name="Enemy" type="RigidBody2D"]
+[node name="Boss" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_eyxlk")
 lock_rotation = true
 contact_monitor = true
 max_contacts_reported = 4
-script = ExtResource("1_hjwkx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -155,36 +153,40 @@ libraries = {
 }
 
 [node name="SoundExplode" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_t2e2f")
+stream = ExtResource("2_dhfhd")
 
 [node name="SoundHit" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, -1)
-stream = ExtResource("4_5rkwm")
+stream = ExtResource("3_itdfc")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 rect = Rect2(-150, -100, 300, 200)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_org2d")
+scale = Vector2(3, 3)
+texture = ExtResource("4_e5fta")
 hframes = 8
 
 [node name="Shape1" type="CollisionShape2D" parent="."]
-position = Vector2(-0.54036, -1.08072)
+position = Vector2(-1, -5)
+scale = Vector2(3, 3)
 shape = SubResource("5")
 
 [node name="Shape2" type="CollisionShape2D" parent="."]
-position = Vector2(3.24216, 1.62108)
+position = Vector2(15, 6)
+scale = Vector2(3, 3)
 shape = SubResource("5")
 
 [node name="Shape3" type="CollisionShape2D" parent="."]
-position = Vector2(-6.2475, 1.76707)
+position = Vector2(-20, 5)
+scale = Vector2(3, 3)
 shape = SubResource("5")
 
 [node name="RaycastLeft" type="RayCast2D" parent="."]
-position = Vector2(-14, -4.672)
+position = Vector2(-38, -15)
 
 [node name="RaycastRight" type="RayCast2D" parent="."]
-position = Vector2(11, -4.672)
+position = Vector2(36, -15)
 
 [node name="Explosion" type="CPUParticles2D" parent="."]
 modulate = Color(1, 1, 1, 0.685843)
@@ -194,7 +196,7 @@ lifetime = 0.5
 one_shot = true
 speed_scale = 1.2
 explosiveness = 0.76
-texture = ExtResource("3_7unrb")
+texture = ExtResource("5_vbli8")
 emission_shape = 1
 emission_sphere_radius = 8.0
 spread = 180.0
