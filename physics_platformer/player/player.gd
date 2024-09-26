@@ -14,6 +14,7 @@ const STOP_JUMP_FORCE = 450.0
 const MAX_SHOOT_POSE_TIME = 0.3
 const MAX_FLOOR_AIRBORNE_TIME = 0.15
 const ENEMY_COLLISION_DAMAGE = 10 #might want to vhange this
+const BOSS_COLLISION_DAMAGE = 10
 
 const BULLET_SCENE = preload("res://player/bullet.tscn")
 const ENEMY_SCENE = preload("res://enemy/enemy.tscn")
@@ -299,6 +300,8 @@ func respawn():
 
 func _on_body_entered(body: Node) -> void:
 	if body is Enemy:
+		damaged(ENEMY_COLLISION_DAMAGE, body)
+	if body is Boss:
 		damaged(ENEMY_COLLISION_DAMAGE, body)
 
 func invincibility():

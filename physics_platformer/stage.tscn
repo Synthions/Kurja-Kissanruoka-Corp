@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://ca5mso2nwjhjs"]
+[gd_scene load_steps=28 format=4 uid="uid://ca5mso2nwjhjs"]
 
 [ext_resource type="TileSet" uid="uid://rowrak7ls50v" path="res://tileset.tres" id="1"]
 [ext_resource type="Script" path="res://stage.gd" id="1_krc1x"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cly3lb7nb8aj1" path="res://New textures + music/overnt world.wav" id="10_4p7vm"]
 [ext_resource type="PackedScene" uid="uid://dypcp3fjlyukb" path="res://pause_menu.tscn" id="11_46dbf"]
 [ext_resource type="PackedScene" uid="uid://b82rjtm2dg3h6" path="res://kissanruoka.tscn" id="12_nnxbx"]
+[ext_resource type="PackedScene" uid="uid://bbs6qmn3ofk2c" path="res://enemy/boss.tscn" id="13_qmt2y"]
 
 [sub_resource type="Animation" id="Animation_oxal6"]
 length = 0.001
@@ -339,24 +340,6 @@ physics_material_override = SubResource("11")
 position = Vector2(1203.31, 407.557)
 physics_material_override = SubResource("12")
 
-[node name="BEnemy1" parent="Enemies" instance=ExtResource("7")]
-position = Vector2(3010, 291)
-
-[node name="BEnemy2" parent="Enemies" instance=ExtResource("7")]
-position = Vector2(3011, 268)
-
-[node name="BEnemy3" parent="Enemies" instance=ExtResource("7")]
-position = Vector2(3011, 241)
-
-[node name="BEnemy4" parent="Enemies" instance=ExtResource("7")]
-position = Vector2(3011, 219)
-
-[node name="BEnemy5" parent="Enemies" instance=ExtResource("7")]
-position = Vector2(3011, 197)
-
-[node name="BEnemy6" parent="Enemies" instance=ExtResource("7")]
-position = Vector2(3011, 175)
-
 [node name="ParallaxBg" parent="." instance=ExtResource("8")]
 
 [node name="Label" type="Label" parent="."]
@@ -387,3 +370,6 @@ offset_bottom = 484.0
 
 [node name="kissanruoka" parent="." instance=ExtResource("12_nnxbx")]
 position = Vector2(371, 432)
+
+[node name="Boss" parent="." instance=ExtResource("13_qmt2y")]
+position = Vector2(3112, 279)

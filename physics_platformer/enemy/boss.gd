@@ -10,9 +10,12 @@ enum State {
 
 var _state := State.WALKING
 
-var direction := -3
+var direction := -2
 var anim := ""
-var sizescale = 3
+var sizescale := 2
+var health := 100
+var player_damage := 20
+var invincible := false
 
 @onready var rc_left := $RaycastLeft as RayCast2D
 @onready var rc_right := $RaycastRight as RayCast2D
@@ -64,6 +67,16 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 func _die() -> void:
 	queue_free()
 
+func _update_health(damage):
+	if not invincible:
+		health -= damage
+		($SoundHit as AudioStreamPlayer2D).play()
+		
+		if health <= 0:
+			health = 0
+		else:
+			invincibility()
+
 
 func _pre_explode() -> void:
 	#make sure nothing collides against this
@@ -79,9 +92,22 @@ func _bullet_collider(
 	state: PhysicsDirectBodyState2D,
 	collision_normal: Vector2
 ) -> void:
-	_state = State.DYING
+	_update_health(player_damage)
+	if health <= 0:
+		_state = State.DYING
+		state.set_angular_velocity(signf(collision_normal.x) * 33.0)
+		physics_material_override.friction = 1
+		collider.disable()
+		
 
-	state.set_angular_velocity(signf(collision_normal.x) * 33.0)
-	physics_material_override.friction = 1
-	collider.disable()
-	($SoundHit as AudioStreamPlayer2D).play()
+
+
+func invincibility():
+	invincible = true
+	for i in range(16):
+		await get_tree().create_timer(.05).timeout
+		if i % 2 == 0:
+			modulate.a = .5
+		else:
+			modulate.a = 1
+	invincible = false
