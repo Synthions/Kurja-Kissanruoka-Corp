@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://udnu8aekj8mh" path="res://background/scroll_bg_cloud_1.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://crkm8guj5obto" path="res://background/scroll_bg_cloud_2.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://bb8syr2l4kbwp" path="res://background/scroll_bg_cloud_3.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://bitu0xunnhbjf" path="res://background/scroll_bg_fg_2.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://c444xs8bsdlgl" path="res://New textures + music/bg_buildings_far.png" id="5_ni8kv"]
 [ext_resource type="Texture2D" uid="uid://rn8bbrgt4o8o" path="res://New textures + music/bg_buildings.png" id="6_xhtjj"]
 
 [node name="ParallaxBg" type="ParallaxBackground"]
@@ -59,7 +59,8 @@ motion_mirroring = Vector2(400, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Mount2"]
 position = Vector2(0, 113)
-texture = ExtResource("5")
+scale = Vector2(1.42222, 1.42222)
+texture = ExtResource("5_ni8kv")
 centered = false
 region_rect = Rect2(0, 0, 400, 128)
 

@@ -99,7 +99,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			floor_index = contact_index
 			if collider is StaticBody2D and collider.is_in_group("one_way_platforms"):
 				is_on_one_way_platform = true
-				print("Pancakes")
+				#print("Pancakes")
 				break
 	# A good idea when implementing characters of all kinds,
 	# compensates for physics imprecision, as well as human reaction delay.
@@ -316,5 +316,3 @@ func invincibility():
 		if i>7:
 			WALK_DEACCEL = 100000.0
 	invincible = false
-	
-			
