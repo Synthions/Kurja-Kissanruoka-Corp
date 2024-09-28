@@ -224,6 +224,9 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		set_collision_mask_value(2, false)  # Assuming one-way platforms are on layer 3
 		await get_tree().create_timer(0.5).timeout
 		set_collision_mask_value(2, true)  # Re-enable collision
+		
+	if position.y > 900: 
+		selfdamage(100)
 
 
 func _shot_bullet() -> void:
@@ -244,6 +247,8 @@ func _shot_bullet() -> void:
 	sound_shoot.play()
 
 	add_collision_exception_with(bullet) # Make bullet and this not collide.
+	
+	
 
 
 func _spawn_enemy_above() -> void:

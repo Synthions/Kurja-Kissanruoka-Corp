@@ -1,10 +1,11 @@
-[gd_resource type="TileSet" load_steps=23 format=3 uid="uid://rowrak7ls50v"]
+[gd_resource type="TileSet" load_steps=24 format=3 uid="uid://rowrak7ls50v"]
 
-[ext_resource type="Texture2D" uid="uid://jum25ds100pb" path="res://New textures + music/tileset_gray.png" id="1_067nm"]
-[ext_resource type="Texture2D" uid="uid://dt5iu1pl601eb" path="res://New textures + music/tileset_full_test.png" id="2_jnpgr"]
+[ext_resource type="Texture2D" uid="uid://do4d2jbjvec2g" path="res://New textures + music/bricks_grey_final2.png" id="1_6rocc"]
+[ext_resource type="Texture2D" uid="uid://dy8k6xdbvo1bg" path="res://New textures + music/bricks_brown_final.png" id="2_1kcpu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_va8am"]
-texture = ExtResource("1_067nm")
+resource_name = "floor1"
+texture = ExtResource("1_6rocc")
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 8
 0:0/0 = 0
@@ -37,7 +38,8 @@ texture_region_size = Vector2i(32, 32)
 0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(16, 12, -16, 12, -16, -16, 16, -16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dri2i"]
-texture = ExtResource("1_067nm")
+resource_name = "floor_end"
+texture = ExtResource("1_6rocc")
 margins = Vector2i(32, 0)
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 8
@@ -71,7 +73,8 @@ texture_region_size = Vector2i(32, 32)
 0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 12, -12, 12, -12, -16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hfgct"]
-texture = ExtResource("1_067nm")
+resource_name = "wall_mid"
+texture = ExtResource("1_6rocc")
 margins = Vector2i(0, 32)
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 8
@@ -105,7 +108,8 @@ texture_region_size = Vector2i(32, 32)
 0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7xlxp"]
-texture = ExtResource("1_067nm")
+resource_name = "window1"
+texture = ExtResource("1_6rocc")
 margins = Vector2i(192, 32)
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 8
@@ -139,7 +143,8 @@ texture_region_size = Vector2i(32, 32)
 0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_64p8q"]
-texture = ExtResource("1_067nm")
+resource_name = "stairs"
+texture = ExtResource("1_6rocc")
 margins = Vector2i(64, 32)
 texture_region_size = Vector2i(32, 96)
 0:0/next_alternative_id = 8
@@ -173,8 +178,8 @@ texture_region_size = Vector2i(32, 96)
 0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(16, 28, -16, -4, -16, -32, 16, -32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bgjgk"]
-texture = ExtResource("1_067nm")
-margins = Vector2i(224, 32)
+texture = ExtResource("1_6rocc")
+margins = Vector2i(32, 32)
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 8
 0:0/0 = 0
@@ -207,7 +212,8 @@ texture_region_size = Vector2i(32, 32)
 0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -12, 16, -12, -16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uq55q"]
-texture = ExtResource("1_067nm")
+resource_name = "floating1"
+texture = ExtResource("1_6rocc")
 margins = Vector2i(64, 0)
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 8
@@ -241,7 +247,8 @@ texture_region_size = Vector2i(32, 32)
 0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(16, 12, -16, 12, -16, -12, 16, -12)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l5dh6"]
-texture = ExtResource("1_067nm")
+resource_name = "floating2"
+texture = ExtResource("1_6rocc")
 margins = Vector2i(96, 0)
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 8
@@ -275,23 +282,32 @@ texture_region_size = Vector2i(32, 32)
 0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(16, 12, -12, 12, -12, -12, 16, -12)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qmgba"]
-texture = ExtResource("1_067nm")
+resource_name = "wall_lamp2"
+texture = ExtResource("1_6rocc")
 texture_region_size = Vector2i(32, 32)
+6:2/next_alternative_id = 2
 6:2/0 = 0
+6:2/1 = 1
+6:2/1/flip_h = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dalol"]
-texture = ExtResource("1_067nm")
+resource_name = "window2"
+texture = ExtResource("1_6rocc")
 texture_region_size = Vector2i(32, 32)
 6:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vescb"]
-texture = ExtResource("2_jnpgr")
+resource_name = "fence1"
+texture = ExtResource("2_1kcpu")
 texture_region_size = Vector2i(32, 32)
-0:3/next_alternative_id = 3
+0:3/next_alternative_id = 4
 0:3/0 = 0
+0:3/3 = 3
+0:3/3/flip_h = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tpymm"]
-texture = ExtResource("2_jnpgr")
+resource_name = "fence2"
+texture = ExtResource("2_1kcpu")
 texture_region_size = Vector2i(32, 32)
 1:3/next_alternative_id = 2
 1:3/0 = 0
@@ -299,7 +315,8 @@ texture_region_size = Vector2i(32, 32)
 1:3/1/flip_h = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w6c8t"]
-texture = ExtResource("1_067nm")
+resource_name = "wall1"
+texture = ExtResource("1_6rocc")
 margins = Vector2i(32, 32)
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 8
@@ -332,14 +349,26 @@ texture_region_size = Vector2i(32, 32)
 0:0/7/transpose = true
 0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -12, 16, -12, -16)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05nbk"]
-texture = ExtResource("1_067nm")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8cnb1"]
+resource_name = "wall_mid2"
+texture = ExtResource("1_6rocc")
 texture_region_size = Vector2i(32, 32)
+5:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05nbk"]
+resource_name = "wall_lamp"
+texture = ExtResource("1_6rocc")
+texture_region_size = Vector2i(32, 32)
+5:2/next_alternative_id = 2
 5:2/0 = 0
-5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 12.0625, -16, 12.1875, 16, -16, 16)
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:2/1 = 1
+5:2/1/flip_h = true
+5:2/1/physics_layer_0/polygon_0/points = PackedVector2Array(-12.75, -16, 16, -16, 16, 16, -12.5, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ee0gv"]
-texture = ExtResource("1_067nm")
+resource_name = "corner"
+texture = ExtResource("1_6rocc")
 margins = Vector2i(32, 64)
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 8
@@ -373,7 +402,8 @@ texture_region_size = Vector2i(32, 32)
 0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -12, 16, -16, 12, -16, -16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu6d"]
-texture = ExtResource("1_067nm")
+resource_name = "floor2"
+texture = ExtResource("1_6rocc")
 margins = Vector2i(96, 96)
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 8
@@ -407,7 +437,8 @@ texture_region_size = Vector2i(32, 32)
 0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 12, -16, 12, -16, -16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8javq"]
-texture = ExtResource("1_067nm")
+resource_name = "floor_lamp"
+texture = ExtResource("1_6rocc")
 margins = Vector2i(128, 96)
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 8
@@ -441,7 +472,8 @@ texture_region_size = Vector2i(32, 32)
 0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 12, -16, 12, -16, -16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8pchj"]
-texture = ExtResource("1_067nm")
+resource_name = "Lamp1"
+texture = ExtResource("1_6rocc")
 margins = Vector2i(128, 64)
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 8
@@ -467,7 +499,8 @@ texture_region_size = Vector2i(32, 32)
 0:0/7/transpose = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s315k"]
-texture = ExtResource("1_067nm")
+resource_name = "Lamp2"
+texture = ExtResource("1_6rocc")
 margins = Vector2i(128, 32)
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 8
@@ -493,7 +526,8 @@ texture_region_size = Vector2i(32, 32)
 0:0/7/transpose = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cnnsu"]
-texture = ExtResource("1_067nm")
+resource_name = "Lamp3"
+texture = ExtResource("1_6rocc")
 margins = Vector2i(128, 0)
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 8
@@ -541,3 +575,4 @@ sources/16 = SubResource("TileSetAtlasSource_qmgba")
 sources/17 = SubResource("TileSetAtlasSource_dalol")
 sources/18 = SubResource("TileSetAtlasSource_vescb")
 sources/19 = SubResource("TileSetAtlasSource_tpymm")
+sources/20 = SubResource("TileSetAtlasSource_8cnb1")

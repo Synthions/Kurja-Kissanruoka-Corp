@@ -260,6 +260,7 @@ libraries = {
 zoom = Vector2(2, 2)
 limit_left = 0
 limit_top = 0
+limit_bottom = 800
 
 [node name="BulletShoot" type="Marker2D" parent="."]
 position = Vector2(21, -4)

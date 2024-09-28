@@ -1,17 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkmxopg1dknq8"]
 
-[ext_resource type="Texture2D" uid="uid://c15sicsdamq2o" path="res://platform/one_way_platform.png" id="1"]
 [ext_resource type="Script" path="res://platform/one_way_platform.gd" id="1_e0jdf"]
+[ext_resource type="Texture2D" uid="uid://dhigsrrejsdi3" path="res://platform/platform.png" id="2_mddh5"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(110, 10)
 
 [node name="OneWayPlatform" type="StaticBody2D"]
+z_index = -1
 collision_layer = 2
 script = ExtResource("1_e0jdf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1")
+z_index = -1
+texture = ExtResource("2_mddh5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.73152, -6.5836)

@@ -13,7 +13,7 @@ var _state := State.WALKING
 var direction := -2
 var anim := ""
 var sizescale := 2
-var health := 100
+var health := 200
 var player_damage := 20
 var invincible := false
 

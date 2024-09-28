@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt5iu1pl601eb"
-path="res://.godot/imported/tileset_full_test.png-c3e57eda633f680378311dd7ccf46b9a.ctex"
+uid="uid://do4d2jbjvec2g"
+path="res://.godot/imported/bricks_grey_final2.png-31d3854ef8c11da393d018ee3cc5dd59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://New textures + music/tileset_full_test.png"
-dest_files=["res://.godot/imported/tileset_full_test.png-c3e57eda633f680378311dd7ccf46b9a.ctex"]
+source_file="res://New textures + music/bricks_grey_final2.png"
+dest_files=["res://.godot/imported/bricks_grey_final2.png-31d3854ef8c11da393d018ee3cc5dd59.ctex"]
 
 [params]
 
