@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://bj4vfmxiofws1"]
+[gd_scene load_steps=18 format=4 uid="uid://pfk1vhckcmc5"]
 
 [ext_resource type="TileSet" uid="uid://rowrak7ls50v" path="res://tileset.tres" id="1_ghj41"]
 [ext_resource type="PackedScene" uid="uid://bbxsp4gp554vh" path="res://player/player.tscn" id="2_1oys6"]
@@ -9,7 +9,8 @@
 [ext_resource type="AudioStream" uid="uid://320tiisw0758" path="res://New textures + music/boss.wav" id="6_7huwa"]
 [ext_resource type="PackedScene" uid="uid://daqqtote00syu" path="res://enemy/enemy.tscn" id="7_ulhh2"]
 [ext_resource type="PackedScene" uid="uid://dkmxopg1dknq8" path="res://platform/one_way_platform.tscn" id="8_xlry0"]
-[ext_resource type="PackedScene" uid="uid://3lw50onwkisb" path="res://platform/one_way_platform_red.tscn" id="11_0tymc"]
+[ext_resource type="PackedScene" uid="uid://bbs6qmn3ofk2c" path="res://enemy/boss.tscn" id="10_b5pma"]
+[ext_resource type="PackedScene" path="res://platform/one_way_platform_red.tscn" id="11_0tymc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uxgj0"]
 texture = ExtResource("2_sq87t")
@@ -303,3 +304,6 @@ position = Vector2(1942, 495)
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource("7_ulhh2")]
 position = Vector2(1298, 693)
+
+[node name="Boss" parent="." instance=ExtResource("10_b5pma")]
+position = Vector2(3766, 154)

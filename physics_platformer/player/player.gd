@@ -49,6 +49,8 @@ var blockerWidth: float
 
 
 func _ready() -> void:
+	#var boss_node = get_node("/root/CityscapeStage/Boss")
+	#boss_node.connect("boss_attack", _on_boss_attack_hit())
 	blockerWidth = healthBlocker.scale.x
 	update_health(100)
 	#this is just making the body_entered call connect to on_body_entered in the code
@@ -289,6 +291,9 @@ func damaged(dmg:int, damager: Node = null, knockback_force: int = 800):
 		return true
 	return false
 		
+
+func _on_boss_attack_hit():
+	damaged(20)
 
 func selfdamage(dmg:int):
 	damaged(dmg)
