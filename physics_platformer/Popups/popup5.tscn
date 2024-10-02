@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bakk10c07dctm"]
+
+[ext_resource type="PackedScene" uid="uid://dveccj1no4bn" path="res://Popups/Popup1.tscn" id="1_5gy1n"]
+[ext_resource type="Texture2D" uid="uid://chnin4n5df6o0" path="res://Popups/popup_images/ad5.png" id="2_e816a"]
+
+[node name="Popup" instance=ExtResource("1_5gy1n")]
+
+[node name="Image" parent="Popup holder/Popup border" index="1"]
+texture = ExtResource("2_e816a")
+
+[node name="X button" parent="Popup holder/Popup border" index="3"]
+offset_left = 70.0
+offset_top = -108.0
+offset_right = 90.0
+offset_bottom = -88.0

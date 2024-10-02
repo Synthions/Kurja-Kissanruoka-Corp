@@ -1,62 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqg4c0kecma36"]
+[gd_scene load_steps=3 format=3 uid="uid://clb6nrm1vwtmw"]
 
-[ext_resource type="PackedScene" uid="uid://dveccj1no4bn" path="res://Popups/Popup1.tscn" id="1_4bgo4"]
-[ext_resource type="Texture2D" uid="uid://thav6qiea3nd" path="res://Temp Images/impossible triangle.jpg" id="2_h7cy4"]
+[ext_resource type="PackedScene" uid="uid://dveccj1no4bn" path="res://Popups/Popup1.tscn" id="1_hi318"]
+[ext_resource type="Texture2D" uid="uid://bgqfo2aapxgls" path="res://Popups/popup_images/ad4.png" id="2_h5o8b"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rnukt"]
-
-[sub_resource type="GDScript" id="GDScript_10ifg"]
-script/source = "extends LineEdit
-
-
-"
-
-[node name="Popup" instance=ExtResource("1_4bgo4")]
-
-[node name="Popup border" parent="Popup holder" index="0"]
-position = Vector2(-16.625, 18.7188)
-
-[node name="Background" parent="Popup holder/Popup border" index="0"]
-position = Vector2(-0.187464, -4.04691)
-scale = Vector2(0.256647, 0.293657)
+[node name="Popup" instance=ExtResource("1_hi318")]
 
 [node name="Image" parent="Popup holder/Popup border" index="1"]
-position = Vector2(0.625, -14.7188)
-scale = Vector2(0.121065, 0.121065)
-texture = ExtResource("2_h7cy4")
-region_enabled = true
-region_rect = Rect2(65.0293, 18.687, 1099.75, 826.164)
-
-[node name="Drag area" parent="Popup holder/Popup border" index="2"]
-offset_left = -86.0
-offset_top = -100.0
-offset_right = 85.0
-offset_bottom = -72.0
+texture = ExtResource("2_h5o8b")
 
 [node name="X button" parent="Popup holder/Popup border" index="3"]
-offset_left = 50.625
-offset_top = -86.7188
-offset_right = 70.625
-offset_bottom = -66.7188
-
-[node name="LineEdit" type="LineEdit" parent="Popup holder/Popup border" index="4"]
-offset_left = -68.375
-offset_top = 42.2813
-offset_right = 71.625
-offset_bottom = 73.2813
-theme_override_colors/selection_color = Color(0, 0, 0, 0.592157)
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.505882)
-theme_override_colors/font_uneditable_color = Color(1, 0.0588235, 0.0627451, 0.780392)
-theme_override_colors/font_color = Color(0, 0, 0, 0.784314)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_rnukt")
-theme_override_styles/read_only = SubResource("StyleBoxEmpty_rnukt")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_rnukt")
-placeholder_text = "Answer here"
-max_length = 6
-context_menu_enabled = false
-shortcut_keys_enabled = false
-middle_mouse_paste_enabled = false
-drag_and_drop_selection_enabled = false
-script = SubResource("GDScript_10ifg")
-
-[connection signal="text_submitted" from="Popup holder/Popup border/LineEdit" to="." method="_on_line_edit_text_submitted"]
+offset_left = 113.0
+offset_right = 133.0

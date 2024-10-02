@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://snxy5rxhx8s4"]
 
 [ext_resource type="PackedScene" uid="uid://dveccj1no4bn" path="res://Popups/Popup1.tscn" id="1_0egfk"]
-[ext_resource type="Texture2D" uid="uid://gjmw65hxsoj4" path="res://Temp Images/lisan al-gaib.jpg" id="2_liaig"]
+[ext_resource type="Texture2D" uid="uid://dgbs4be1a5e2" path="res://Popups/popup_images/ad2.png" id="2_jaxwe"]
 
 [node name="Popup" instance=ExtResource("1_0egfk")]
 
@@ -11,7 +11,18 @@ scale = Vector2(0.26458, 0.233919)
 
 [node name="Image" parent="Popup holder/Popup border" index="1"]
 position = Vector2(2.5, -1.25)
-scale = Vector2(0.147391, 0.147391)
-texture = ExtResource("2_liaig")
-region_enabled = true
-region_rect = Rect2(47.2673, 109.857, 991.744, 709.285)
+scale = Vector2(1.965, 1.965)
+texture = ExtResource("2_jaxwe")
+region_rect = Rect2(-24.8445, -22.7222, 168.334, 154.069)
+
+[node name="Drag area" parent="Popup holder/Popup border" index="2"]
+offset_left = -112.0
+offset_top = -79.0
+offset_right = 121.0
+offset_bottom = 83.0
+
+[node name="X button" parent="Popup holder/Popup border" index="3"]
+offset_left = 65.0
+offset_top = -102.0
+offset_right = 85.0
+offset_bottom = -82.0

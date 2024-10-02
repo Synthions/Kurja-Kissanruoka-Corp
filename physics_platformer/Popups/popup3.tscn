@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c7wwv8taahcag"]
 
 [ext_resource type="PackedScene" uid="uid://dveccj1no4bn" path="res://Popups/Popup1.tscn" id="1_b1dbd"]
-[ext_resource type="Texture2D" uid="uid://b5eyx5jfpk6ks" path="res://Temp Images/stopdoingmath.jpg" id="2_v266y"]
+[ext_resource type="Texture2D" uid="uid://djh4wrfpj5w1w" path="res://Popups/popup_images/ad3.png" id="2_kun2e"]
 
 [node name="Popup" instance=ExtResource("1_b1dbd")]
 
@@ -12,8 +12,8 @@ position = Vector2(46.75, -12.5625)
 scale = Vector2(0.279588, 0.289022)
 
 [node name="Image" parent="Popup holder/Popup border" index="1"]
-scale = Vector2(0.131579, 0.131579)
-texture = ExtResource("2_v266y")
+scale = Vector2(2.12298, 2.12298)
+texture = ExtResource("2_kun2e")
 
 [node name="Drag area" parent="Popup holder/Popup border" index="2"]
 offset_left = -80.0
@@ -21,7 +21,7 @@ offset_top = -83.0
 offset_right = 86.0
 
 [node name="X button" parent="Popup holder/Popup border" index="3"]
-offset_left = 60.0
-offset_top = -76.0
-offset_right = 80.0
-offset_bottom = -56.0
+offset_left = 94.25
+offset_top = -64.4375
+offset_right = 114.25
+offset_bottom = -44.4375
