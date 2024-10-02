@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxen7docw6mcg"
-path="res://.godot/imported/bricks_grey_final.png-ee447f252e546262b2f12826b7982a7d.ctex"
+uid="uid://bjxqpcrcb1r1"
+path="res://.godot/imported/bg_decors_final.png-6871db642c2f8f7a6705b51155915abf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://New textures + music/bricks_grey_final.png"
-dest_files=["res://.godot/imported/bricks_grey_final.png-ee447f252e546262b2f12826b7982a7d.ctex"]
+source_file="res://New textures + music/bg_decors_final.png"
+dest_files=["res://.godot/imported/bg_decors_final.png-6871db642c2f8f7a6705b51155915abf.ctex"]
 
 [params]
 

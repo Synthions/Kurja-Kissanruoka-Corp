@@ -81,6 +81,7 @@ func _bullet_collider(
 	_state = State.DYING
 
 	state.set_angular_velocity(signf(collision_normal.x) * 33.0)
-	physics_material_override.friction = 1
+	#physics_material_override.friction = 1
+	state.get_linear_velocity().y = 10
 	collider.disable()
 	($SoundHit as AudioStreamPlayer2D).play()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy8k6xdbvo1bg"
-path="res://.godot/imported/bricks_brown_final.png-c5a6e29f883f421ca1b9992e1b8c9ddd.ctex"
+uid="uid://cgf8uauoaa7iy"
+path="res://.godot/imported/red_final.png-3f8b51173910a1fa4ff1c3d905badb52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://New textures + music/bricks_brown_final.png"
-dest_files=["res://.godot/imported/bricks_brown_final.png-c5a6e29f883f421ca1b9992e1b8c9ddd.ctex"]
+source_file="res://New textures + music/red_final.png"
+dest_files=["res://.godot/imported/red_final.png-3f8b51173910a1fa4ff1c3d905badb52.ctex"]
 
 [params]
 

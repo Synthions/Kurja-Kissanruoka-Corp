@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=24 format=3 uid="uid://rowrak7ls50v"]
 
 [ext_resource type="Texture2D" uid="uid://do4d2jbjvec2g" path="res://New textures + music/bricks_grey_final2.png" id="1_6rocc"]
-[ext_resource type="Texture2D" uid="uid://dy8k6xdbvo1bg" path="res://New textures + music/bricks_brown_final.png" id="2_1kcpu"]
+[ext_resource type="Texture2D" uid="uid://bgfpddqn2dhg4" path="res://New textures + music/red_final2.png" id="2_yneqk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_va8am"]
 resource_name = "floor1"
@@ -146,70 +146,27 @@ texture_region_size = Vector2i(32, 32)
 resource_name = "stairs"
 texture = ExtResource("1_6rocc")
 margins = Vector2i(64, 32)
-texture_region_size = Vector2i(32, 96)
-0:0/next_alternative_id = 8
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -10, 16, 22, 16, 48, -16, 48)
-0:0/1 = 1
-0:0/1/flip_h = true
-0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 22, 16, -10, 16, 48, -16, 48)
-0:0/2 = 2
-0:0/2/flip_v = true
-0:0/2/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -48, 16, -48, 16, -22, -16, 10)
-0:0/3 = 3
-0:0/3/flip_h = true
-0:0/3/flip_v = true
-0:0/3/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -48, 16, -48, 16, 10, -16, -22)
-0:0/4 = 4
-0:0/4/transpose = true
-0:0/4/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -28, 16, 4, 16, 32, -16, 32)
-0:0/5 = 5
-0:0/5/flip_h = true
-0:0/5/transpose = true
-0:0/5/physics_layer_0/polygon_0/points = PackedVector2Array(16, -28, -16, 4, -16, 32, 16, 32)
-0:0/6 = 6
-0:0/6/flip_v = true
-0:0/6/transpose = true
-0:0/6/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 28, 16, -4, 16, -32, -16, -32)
-0:0/7 = 7
-0:0/7/flip_h = true
-0:0/7/flip_v = true
-0:0/7/transpose = true
-0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(16, 28, -16, -4, -16, -32, 16, -32)
+texture_region_size = Vector2i(32, 32)
+0:1/next_alternative_id = 2
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, 16, -16, 16)
+0:1/1 = 1
+0:1/1/flip_h = true
+0:1/1/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, 16, -16, -16, 16)
+0:2/next_alternative_id = 2
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, 16, -16, 16)
+0:2/1 = 1
+0:2/1/flip_h = true
+0:2/1/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bgjgk"]
+resource_name = "wall2"
 texture = ExtResource("1_6rocc")
 margins = Vector2i(32, 32)
 texture_region_size = Vector2i(32, 32)
-0:0/next_alternative_id = 8
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, -16, -16, 12, -16, 12, 16)
-0:0/1 = 1
-0:0/1/flip_h = true
-0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, 16, -16, -12, -16, -12, 16)
-0:0/2 = 2
-0:0/2/flip_v = true
-0:0/2/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 12, 16, 12, -16)
-0:0/3 = 3
-0:0/3/flip_h = true
-0:0/3/flip_v = true
-0:0/3/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -12, 16, -12, -16)
-0:0/4 = 4
-0:0/4/transpose = true
-0:0/4/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, -16, -16, 12, -16, 12, 16)
-0:0/5 = 5
-0:0/5/flip_h = true
-0:0/5/transpose = true
-0:0/5/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, 16, -16, -12, -16, -12, 16)
-0:0/6 = 6
-0:0/6/flip_v = true
-0:0/6/transpose = true
-0:0/6/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 12, 16, 12, -16)
-0:0/7 = 7
-0:0/7/flip_h = true
-0:0/7/flip_v = true
-0:0/7/transpose = true
-0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -12, 16, -12, -16)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 12, -16, 12, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uq55q"]
 resource_name = "floating1"
@@ -296,24 +253,6 @@ texture = ExtResource("1_6rocc")
 texture_region_size = Vector2i(32, 32)
 6:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vescb"]
-resource_name = "fence1"
-texture = ExtResource("2_1kcpu")
-texture_region_size = Vector2i(32, 32)
-0:3/next_alternative_id = 4
-0:3/0 = 0
-0:3/3 = 3
-0:3/3/flip_h = true
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tpymm"]
-resource_name = "fence2"
-texture = ExtResource("2_1kcpu")
-texture_region_size = Vector2i(32, 32)
-1:3/next_alternative_id = 2
-1:3/0 = 0
-1:3/1 = 1
-1:3/1/flip_h = true
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w6c8t"]
 resource_name = "wall1"
 texture = ExtResource("1_6rocc")
@@ -355,16 +294,105 @@ texture = ExtResource("1_6rocc")
 texture_region_size = Vector2i(32, 32)
 5:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cy178"]
+texture = ExtResource("1_6rocc")
+texture_region_size = Vector2i(32, 32)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v01vd"]
+resource_name = "All_Red"
+texture = ExtResource("2_yneqk")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, 16, -16, 16)
+1:0/next_alternative_id = 2
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 12, -12, 12, 16, -16, 16)
+1:0/1 = 1
+1:0/1/flip_h = true
+1:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 16, -12, 16, 16, -12, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, 16, -16, 16)
+3:0/next_alternative_id = 2
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, 16, -16, 16)
+3:0/1 = 1
+3:0/1/flip_h = true
+3:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 16, -12, 16, 16, -12, 12)
+4:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/next_alternative_id = 2
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 12, -16, 12, 16, -16, 16)
+1:1/1 = 1
+1:1/1/flip_h = true
+1:1/1/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -16, 16, -16, 16, 16, -12, 16)
+4:1/0 = 0
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:1/0 = 0
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 12, -16, 12, 16, -16, 16)
+1:2/next_alternative_id = 3
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 12, -16, 12, -12, 16, -12, 16, 16, -16, 16)
+1:2/1 = 1
+1:2/1/flip_h = true
+1:2/1/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, -12, -16, 16, -16, 16, 16, -16, 16, -16, -12)
+2:2/next_alternative_id = 2
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 12, 16, -16, 16)
+2:2/1 = 1
+2:2/1/flip_h = true
+2:2/1/physics_layer_0/polygon_0/points = PackedVector2Array(16, -12, 16, 16, -12, 16)
+4:2/0 = 0
+5:2/next_alternative_id = 2
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 12, -16, 12, 16, -16, 16)
+5:2/1 = 1
+5:2/1/flip_h = true
+5:2/1/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -16, 16, -16, 16, 16, -12, 16)
+6:2/next_alternative_id = 2
+6:2/0 = 0
+6:2/1 = 1
+6:2/1/flip_h = true
+0:3/next_alternative_id = 2
+0:3/0 = 0
+0:3/1 = 1
+0:3/1/flip_h = true
+1:3/next_alternative_id = 2
+1:3/0 = 0
+1:3/1 = 1
+1:3/1/flip_h = true
+2:3/next_alternative_id = 2
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, 16, -16, 16)
+2:3/1 = 1
+2:3/1/flip_h = true
+2:3/1/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, 16, -16, 16)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, 16, -16, 16)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, 16, -16, 16)
+5:3/next_alternative_id = 2
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, 16, -16, 16)
+5:3/1 = 1
+5:3/1/flip_h = true
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05nbk"]
-resource_name = "wall_lamp"
+resource_name = "wall_lamp1"
 texture = ExtResource("1_6rocc")
 texture_region_size = Vector2i(32, 32)
 5:2/next_alternative_id = 2
 5:2/0 = 0
-5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 12, -16, 12, 16, -16, 16)
 5:2/1 = 1
 5:2/1/flip_h = true
-5:2/1/physics_layer_0/polygon_0/points = PackedVector2Array(-12.75, -16, 16, -16, 16, 16, -12.5, 16)
+5:2/1/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -16, 16, -16, 16, 16, -12, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ee0gv"]
 resource_name = "corner"
@@ -435,6 +463,8 @@ texture_region_size = Vector2i(32, 32)
 0:0/7/flip_v = true
 0:0/7/transpose = true
 0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 12, -16, 12, -16, -16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, -8, -12, 12, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8javq"]
 resource_name = "floor_lamp"
@@ -573,6 +603,6 @@ sources/14 = SubResource("TileSetAtlasSource_uq55q")
 sources/15 = SubResource("TileSetAtlasSource_l5dh6")
 sources/16 = SubResource("TileSetAtlasSource_qmgba")
 sources/17 = SubResource("TileSetAtlasSource_dalol")
-sources/18 = SubResource("TileSetAtlasSource_vescb")
-sources/19 = SubResource("TileSetAtlasSource_tpymm")
 sources/20 = SubResource("TileSetAtlasSource_8cnb1")
+sources/21 = SubResource("TileSetAtlasSource_cy178")
+sources/22 = SubResource("TileSetAtlasSource_v01vd")

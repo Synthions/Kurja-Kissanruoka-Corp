@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bulmr2lpb7y4h" path="res://audio/sound_explode.wav" id="5_t2e2f"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eyxlk"]
+friction = 0.0
 
 [sub_resource type="Animation" id="Animation_a7qal"]
 resource_name = "RESET"
@@ -171,7 +172,7 @@ texture = ExtResource("4_kqo47")
 hframes = 3
 
 [node name="Shape1" type="CollisionShape2D" parent="."]
-position = Vector2(-0.54036, -1.08072)
+position = Vector2(0, -4)
 shape = SubResource("5")
 
 [node name="Shape2" type="CollisionShape2D" parent="."]

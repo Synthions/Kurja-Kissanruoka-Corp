@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://3lw50onwkisb"]
+
+[ext_resource type="PackedScene" uid="uid://dkmxopg1dknq8" path="res://platform/one_way_platform.tscn" id="1_ye8s6"]
+[ext_resource type="Texture2D" uid="uid://dyb8fwvppi3nl" path="res://platform/red_platform.png" id="2_mwyst"]
+
+[node name="OneWayPlatform" instance=ExtResource("1_ye8s6")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_mwyst")
