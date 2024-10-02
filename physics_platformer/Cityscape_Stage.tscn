@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://daqqtote00syu" path="res://enemy/enemy.tscn" id="7_ulhh2"]
 [ext_resource type="PackedScene" uid="uid://dkmxopg1dknq8" path="res://platform/one_way_platform.tscn" id="8_xlry0"]
 [ext_resource type="PackedScene" uid="uid://bbs6qmn3ofk2c" path="res://enemy/boss.tscn" id="10_b5pma"]
-[ext_resource type="PackedScene" uid="uid://3lw50onwkisb" path="res://platform/one_way_platform_red.tscn" id="11_0tymc"]
+[ext_resource type="PackedScene" path="res://platform/one_way_platform_red.tscn" id="11_0tymc"]
 [ext_resource type="PackedScene" uid="uid://dtbrdmojpvetu" path="res://platform/moving_platform.tscn" id="12_6xseo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uxgj0"]

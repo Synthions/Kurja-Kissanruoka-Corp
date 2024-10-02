@@ -1,11 +1,12 @@
 [gd_scene load_steps=2 format=3 uid="uid://dtbrdmojpvetu"]
 
-[ext_resource type="Texture2D" uid="uid://cde7btbdorp8f" path="res://platform/moving_platform.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://caj81idx80rd1" path="res://platform/moving_steel_beam.png" id="1_un6gs"]
 
 [node name="MovingPlatform" type="CharacterBody2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2")
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-44, -12, 44, -12, 44, 12, -44, 12)
+polygon = PackedVector2Array(-49, -12, 47, -12, 47, 12, -49, 12)
+
+[node name="MovingSteelBeam" type="Sprite2D" parent="."]
+position = Vector2(-1, -378)
+texture = ExtResource("1_un6gs")
