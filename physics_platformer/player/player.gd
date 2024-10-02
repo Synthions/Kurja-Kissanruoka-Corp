@@ -75,6 +75,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var spawn := Input.is_action_just_pressed(&"spawn")
 	var selfdamage := Input.is_action_just_pressed(&"selfdamage")
 	var popup := Input.is_action_just_pressed(&"testpopup")
+	var ender := Input.is_action_just_pressed(&"ender")
 	var is_on_one_way_platform := false
 	if spawn:
 		_spawn_enemy_above.call_deferred()
@@ -84,6 +85,9 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 
 	if popup:
 		_spawn_popup()
+		
+	if ender:
+		victory()
 
 	# Deapply previous floor velocity.
 	velocity.x -= floor_h_velocity
@@ -326,3 +330,15 @@ func invincibility():
 		if i>7:
 			WALK_DEACCEL = 100000.0
 	invincible = false
+	
+	
+signal victory_signal
+
+func victory():
+	print("vinctory :)")
+	
+	emit_signal("victory_signal")
+	
+	$AnimationPlayer.play("Victory")
+		
+	
