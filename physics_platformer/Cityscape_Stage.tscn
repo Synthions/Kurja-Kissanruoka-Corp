@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://xi6afekppnbt" path="res://New textures + music/winstate.wav" id="9_76v2e"]
 [ext_resource type="AudioStream" uid="uid://cuunpf2bp07qf" path="res://New textures + music/winstate loop.wav" id="9_rpc6y"]
 [ext_resource type="PackedScene" uid="uid://bbs6qmn3ofk2c" path="res://enemy/boss.tscn" id="10_b5pma"]
-[ext_resource type="PackedScene" path="res://platform/one_way_platform_red.tscn" id="11_0tymc"]
+[ext_resource type="PackedScene" uid="uid://3lw50onwkisb" path="res://platform/one_way_platform_red.tscn" id="11_0tymc"]
 [ext_resource type="PackedScene" uid="uid://dtbrdmojpvetu" path="res://platform/moving_platform.tscn" id="12_6xseo"]
 [ext_resource type="PackedScene" uid="uid://cbsfh4lt7vewi" path="res://boss_door.tscn" id="15_sv8vn"]
 
@@ -343,7 +343,7 @@ libraries = {
 }
 
 [node name="Player" parent="." instance=ExtResource("2_1oys6")]
-position = Vector2(5723, 323)
+position = Vector2(357, 567)
 
 [node name="Enemies" type="Node" parent="."]
 

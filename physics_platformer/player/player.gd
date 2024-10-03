@@ -360,9 +360,11 @@ signal victory_signal
 
 func victory():
 	print("vinctory :)")
+	has_won = true
+	await get_tree().create_timer(1.5).timeout
 	emit_signal("victory_signal")
 	$AnimationPlayer.play("Victory")
-	has_won = true
+	
 	
 
 
@@ -371,4 +373,5 @@ func _on_boss_boss_attack(dmg: int) -> void:
 
 
 func _on_boss_boss_death() -> void:
+	
 	victory()

@@ -201,5 +201,5 @@ vframes = 2
 [connection signal="button_down" from="Popup holder/Popup border/Drag area" to="." method="_on_drag_area_button_down"]
 [connection signal="button_up" from="Popup holder/Popup border/Drag area" to="." method="_on_drag_area_button_up"]
 [connection signal="button_down" from="Popup holder/Popup border/X button" to="." method="_on_button_button_down"]
-[connection signal="pressed" from="Popup holder/Popup border/X button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Popup holder/Popup border/X button" to="." method="_on_x_button_pressed"]
+[connection signal="pressed" from="Popup holder/Popup border/X button" to="." method="_on_button_pressed"]
