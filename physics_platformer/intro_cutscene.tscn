@@ -1,12 +1,195 @@
-[gd_scene load_steps=3 format=3 uid="uid://drwhlklouh0b2"]
+[gd_scene load_steps=15 format=3 uid="uid://drwhlklouh0b2"]
 
 [ext_resource type="Script" path="res://intro_cutscene.gd" id="1_77n37"]
-[ext_resource type="Texture2D" uid="uid://4br2ix8qt28j" path="res://Temp Images/88glxgmazzmb1.jpg" id="2_ajvd7"]
+[ext_resource type="Texture2D" uid="uid://cf27gtb1d5in8" path="res://Temp Images/Neliö4.png" id="2_ofwol"]
+[ext_resource type="Texture2D" uid="uid://b2ovthss2vlgk" path="res://intro_sequence/catattack0.png" id="3_fa6nn"]
+[ext_resource type="Texture2D" uid="uid://w13jh5isedc5" path="res://intro_sequence/catattack1.png" id="4_3ju7q"]
+[ext_resource type="Texture2D" uid="uid://cnlj6m1ctqyg1" path="res://intro_sequence/catattack2.png" id="5_61j4d"]
+[ext_resource type="Texture2D" uid="uid://bboxsk11763ei" path="res://intro_sequence/catattack3.png" id="6_qjwqa"]
+[ext_resource type="Texture2D" uid="uid://uub0jjp4iyj3" path="res://intro_sequence/catattack4.png" id="7_5ghk3"]
+[ext_resource type="Texture2D" uid="uid://brooqjkf7qv42" path="res://intro_sequence/catattack5.png" id="8_rbjiv"]
+[ext_resource type="Texture2D" uid="uid://baqbyw2oo67c4" path="res://intro_sequence/catattack6.png" id="9_71u0m"]
+[ext_resource type="Texture2D" uid="uid://dbvi6pvjvmkw1" path="res://intro_sequence/introout.png" id="10_u34kp"]
+[ext_resource type="AudioStream" uid="uid://bcisif2nyxnoh" path="res://intro_sequence/introloop-bass.wav" id="11_ah8f2"]
+
+[sub_resource type="Animation" id="Animation_71tkk"]
+length = 17.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Catattack2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/introout:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(13.6256, 14.6256),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gwobc"]
+resource_name = "show images"
+length = 15.0
+step = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Catattack1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Catattack6:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 11, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Catattack4:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 8, 9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/Catattack5:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 10, 11),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node2D/Catattack2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node2D/Catattack3:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 6, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Node2D/introout:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(13.6256, 14.6256),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x21ii"]
+_data = {
+"RESET": SubResource("Animation_71tkk"),
+"show images": SubResource("Animation_gwobc")
+}
 
 [node name="IntroCutscene" type="Node2D"]
 script = ExtResource("1_77n37")
 
-[node name="88Glxgmazzmb1" type="Sprite2D" parent="."]
-position = Vector2(443, 242)
-scale = Vector2(0.522801, 0.522801)
-texture = ExtResource("2_ajvd7")
+[node name="Neliö4" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(448, 248)
+scale = Vector2(1.70926, 1)
+texture = ExtResource("2_ofwol")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x21ii")
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(394, 238)
+scale = Vector2(0.38, 0.38)
+
+[node name="Catattack0" type="Sprite2D" parent="Node2D"]
+position = Vector2(18.4211, 13.1579)
+texture = ExtResource("3_fa6nn")
+
+[node name="Catattack1" type="Sprite2D" parent="Node2D"]
+position = Vector2(18.4211, 13.1579)
+texture = ExtResource("4_3ju7q")
+
+[node name="Catattack2" type="Sprite2D" parent="Node2D"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(18.4211, 13.1579)
+texture = ExtResource("5_61j4d")
+
+[node name="Catattack3" type="Sprite2D" parent="Node2D"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(18.4211, 13.1579)
+texture = ExtResource("6_qjwqa")
+
+[node name="Catattack4" type="Sprite2D" parent="Node2D"]
+position = Vector2(18.4211, 13.1579)
+texture = ExtResource("7_5ghk3")
+
+[node name="Catattack5" type="Sprite2D" parent="Node2D"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(18.4211, 13.1579)
+texture = ExtResource("8_rbjiv")
+
+[node name="Catattack6" type="Sprite2D" parent="Node2D"]
+position = Vector2(18.4211, 13.1579)
+texture = ExtResource("9_71u0m")
+
+[node name="introout" type="Sprite2D" parent="Node2D"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(18.4211, 13.1579)
+scale = Vector2(1.57249, 1.57249)
+texture = ExtResource("10_u34kp")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_ah8f2")
+autoplay = true

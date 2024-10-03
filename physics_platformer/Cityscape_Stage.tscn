@@ -343,7 +343,7 @@ libraries = {
 }
 
 [node name="Player" parent="." instance=ExtResource("2_1oys6")]
-position = Vector2(5698, 382)
+position = Vector2(383, 567)
 
 [node name="Enemies" type="Node" parent="."]
 
@@ -433,7 +433,7 @@ position = Vector2(1298, 693)
 position = Vector2(6182, 412)
 
 [node name="Boss_door" parent="." instance=ExtResource("15_sv8vn")]
-position = Vector2(5924, 337)
+position = Vector2(5918, 307)
 
 [node name="Movers" type="Node" parent="."]
 
@@ -454,3 +454,5 @@ libraries = {
 autoplay = "Move platform"
 
 [connection signal="victory_signal" from="Player" to="ParallaxBg" method="_on_player_victory_signal"]
+[connection signal="victory_signal" from="Player" to="AudioManager" method="_on_player_victory_signal"]
+[connection signal="INTRUDER" from="Boss_door" to="AudioManager" method="_on_boss_door_intruder"]

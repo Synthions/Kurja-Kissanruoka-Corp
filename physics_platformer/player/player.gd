@@ -60,7 +60,8 @@ func _ready() -> void:
 	
 	while not has_won:
 		await get_tree().create_timer(randf_range(1,15)).timeout
-		_spawn_popup()
+		if not has_won:
+			_spawn_popup()
 		
 		
 
@@ -359,10 +360,7 @@ signal victory_signal
 
 func victory():
 	print("vinctory :)")
-	
 	emit_signal("victory_signal")
-	
 	$AnimationPlayer.play("Victory")
-	
 	has_won = true
 	

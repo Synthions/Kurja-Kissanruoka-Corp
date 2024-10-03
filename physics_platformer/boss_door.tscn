@@ -58,3 +58,5 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_wvh4a")
 }
+
+[connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_area_2d_body_entered"]

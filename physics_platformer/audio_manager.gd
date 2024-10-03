@@ -11,7 +11,7 @@ var playing = 0
 @export var library: Array[AudioStream] = []
 
 func _ready() -> void:
-	autofade() #start playing overworld automatically
+	crossfade_to(library[0]) #start playing overworld automatically
 
 func _process(delta: float) -> void:
 	
@@ -74,3 +74,12 @@ func swap_to(audio_stream: AudioStream) -> void:
 		_track_1.volume_db = -80
 		_track_2.volume_db = 0
 		_track_1.playing = false
+
+
+func _on_boss_door_intruder() -> void:
+	crossfade_to(library[1])
+	
+
+
+func _on_player_victory_signal() -> void:
+	swap_to(library[3])
