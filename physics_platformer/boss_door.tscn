@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbpib2wktjcjo"]
+[gd_scene load_steps=7 format=3 uid="uid://cbsfh4lt7vewi"]
 
 [ext_resource type="Script" path="res://boss_door.gd" id="1_hlr28"]
 [ext_resource type="Texture2D" uid="uid://0ovss7ecykdj" path="res://New textures + music/door_wider.png" id="2_lu0x3"]

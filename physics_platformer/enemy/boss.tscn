@@ -1,9 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbs6qmn3ofk2c"]
+[gd_scene load_steps=17 format=3 uid="uid://bbs6qmn3ofk2c"]
 
 [ext_resource type="Script" path="res://enemy/boss.gd" id="1_gi5lt"]
 [ext_resource type="AudioStream" uid="uid://bulmr2lpb7y4h" path="res://audio/sound_explode.wav" id="2_qqjr2"]
 [ext_resource type="AudioStream" uid="uid://cfssio7r2t7wq" path="res://audio/sound_hit.wav" id="3_vobtc"]
-[ext_resource type="Texture2D" uid="uid://cuxwyak4g6l7c" path="res://enemy/spritesheet.png" id="4_ogut7"]
+[ext_resource type="Texture2D" uid="uid://cch47t4enj5pe" path="res://enemy/boss_sprite_sheet.png" id="4_nd5yc"]
 [ext_resource type="Texture2D" uid="uid://7sv64orewgmb" path="res://player/bullet.png" id="5_cwec7"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eyxlk"]
@@ -36,6 +36,22 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_3mq4h"]
+resource_name = "attack"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [5, 0, 1, 2, 3, 4]
+}
+
 [sub_resource type="Animation" id="2"]
 length = 6.0
 step = 0.0
@@ -49,7 +65,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [4]
+"values": [5]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -94,9 +110,9 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id="3"]
-length = 6.75
+length = 2.0
 loop_mode = 1
-step = 0.25
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -104,10 +120,26 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.75, 1.5, 2.25, 3, 3.75, 4.5, 5.25, 6, 6.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.3, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [5, 6, 5, 6, 5, 6, 7, 6, 7, 5]
+"values": [6, 7, 8, 7, 8, 7]
+}
+
+[sub_resource type="Animation" id="Animation_1ar07"]
+resource_name = "jump"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
 }
 
 [sub_resource type="Animation" id="4"]
@@ -130,8 +162,10 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ay0tp"]
 _data = {
 "RESET": SubResource("Animation_a7qal"),
+"attack": SubResource("Animation_3mq4h"),
 "explode": SubResource("2"),
 "idle": SubResource("3"),
+"jump": SubResource("Animation_1ar07"),
 "walk": SubResource("4")
 }
 
@@ -143,7 +177,7 @@ offsets = PackedFloat32Array(0.5, 1)
 colors = PackedColorArray(1, 1, 1, 0.501961, 0, 0, 0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76lb3"]
-size = Vector2(34, 39)
+size = Vector2(44, 59.5)
 
 [node name="Boss" type="RigidBody2D"]
 collision_layer = 3
@@ -158,6 +192,7 @@ script = ExtResource("1_gi5lt")
 libraries = {
 "": SubResource("AnimationLibrary_ay0tp")
 }
+autoplay = "idle"
 
 [node name="SoundExplode" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_qqjr2")
@@ -170,27 +205,27 @@ stream = ExtResource("3_vobtc")
 rect = Rect2(-150, -100, 300, 200)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
-texture = ExtResource("4_ogut7")
-hframes = 3
+position = Vector2(-2, -30)
+texture = ExtResource("4_nd5yc")
+hframes = 10
 
 [node name="Shape1" type="CollisionShape2D" parent="."]
-position = Vector2(-0.54036, -1.08072)
+position = Vector2(0, -14)
 scale = Vector2(2, 2)
 shape = SubResource("5")
 
 [node name="Shape2" type="CollisionShape2D" parent="."]
-position = Vector2(13, 6)
+position = Vector2(8, 6)
 scale = Vector2(2, 2)
 shape = SubResource("5")
 
 [node name="Shape3" type="CollisionShape2D" parent="."]
-position = Vector2(-13, 7)
+position = Vector2(-10, 7)
 scale = Vector2(2, 2)
 shape = SubResource("5")
 
 [node name="RaycastLeft" type="RayCast2D" parent="."]
-position = Vector2(-18, -6)
+position = Vector2(-24, -9)
 collision_mask = 3
 
 [node name="RaycastRight" type="RayCast2D" parent="."]
@@ -215,5 +250,8 @@ color_ramp = SubResource("6")
 [node name="AttackHitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
-position = Vector2(-46, -1)
+position = Vector2(-47, -9)
 shape = SubResource("RectangleShape2D_76lb3")
+
+[connection signal="body_entered" from="AttackHitbox" to="." method="_on_attack_hitbox_body_entered"]
+[connection signal="body_exited" from="AttackHitbox" to="." method="_on_attack_hitbox_body_exited"]

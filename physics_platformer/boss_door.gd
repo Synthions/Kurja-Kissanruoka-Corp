@@ -8,8 +8,9 @@ func drop():
 	
 var triggered = false
 
-func _on_area_2d_body_entered(body: RigidBody2D) -> void:
-	if !triggered:
-		triggered = true
-		drop()
-		emit_signal("INTRUDER")
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is Player:
+		if !triggered:
+			triggered = true
+			drop()
+			emit_signal("INTRUDER")

@@ -364,3 +364,11 @@ func victory():
 	$AnimationPlayer.play("Victory")
 	has_won = true
 	
+
+
+func _on_boss_boss_attack(dmg: int) -> void:
+	damaged(dmg)
+
+
+func _on_boss_boss_death() -> void:
+	victory()
