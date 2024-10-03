@@ -26,3 +26,6 @@ offset_left = 65.0
 offset_top = -102.0
 offset_right = 85.0
 offset_bottom = -82.0
+
+[node name="SpriteSheet" parent="Popup holder/Popup border" index="4"]
+position = Vector2(75, -92)

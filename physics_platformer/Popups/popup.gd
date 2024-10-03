@@ -6,13 +6,18 @@ var last_mouse_pos = Vector2()
 @export var popup_sounds: Array[AudioStream] = []
 
 func _ready() -> void:
-	var audio_player = $AudioStreamPlayer2D
-	#await get_tree().create_timer(1.5).timeout
-	audio_player.stream = popup_sounds[randi() % popup_sounds.size()]
+	var audio_player = $AudioStreamPlayer
+	var play_n = randi() % popup_sounds.size()
+	audio_player.stream = popup_sounds[play_n]
+	if play_n == 1:
+		audio_player.volume_db = 15
+	else:
+		audio_player.volume_db = 5
+	
+	
 	audio_player.seek(0)
 	audio_player.play()
-	audio_player.volume_db = 0
-	print("MAU!", audio_player.stream)
+	$AnimationPlayer.play("loading")
 	
 	
 func _on_x_button_pressed() -> void:
@@ -33,20 +38,3 @@ func _process(delta: float) -> void:
 	
 	if held:
 		position += mouse_delta
-
-
-
-
-func _on_line_edit_text_submitted(new_text: String) -> void:
-	#This whole function is useless. It does nothing since text lines were removed.
-	var field := $"Popup holder/Popup border/LineEdit"
-
-	field.text = "WRONG"
-	field.editable = false
-	await get_tree().create_timer(1.5).timeout
-	field.clear()
-	field.editable = true
-
-
-func _on_audio_stream_player_2d_finished() -> void:
-	print("sound has completed WTFFF")

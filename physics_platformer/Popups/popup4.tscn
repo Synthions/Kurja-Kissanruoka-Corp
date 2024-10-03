@@ -11,3 +11,6 @@ texture = ExtResource("2_h5o8b")
 [node name="X button" parent="Popup holder/Popup border" index="3"]
 offset_left = 113.0
 offset_right = 133.0
+
+[node name="SpriteSheet" parent="Popup holder/Popup border" index="4"]
+position = Vector2(123, -59)

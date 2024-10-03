@@ -39,6 +39,8 @@ var health := 100
 
 var blockerWidth: float
 
+var has_won = false
+
 @onready var sound_jump := $SoundJump as AudioStreamPlayer2D
 @onready var sound_shoot := $SoundShoot as AudioStreamPlayer2D
 @onready var sprite := $Sprite2D as Sprite2D
@@ -55,10 +57,16 @@ func _ready() -> void:
 	update_health(100)
 	#this is just making the body_entered call connect to on_body_entered in the code
 	connect("body_entered", Callable(self, "_on_body_entered"))
+	
+	while not has_won:
+		await get_tree().create_timer(randf_range(1,15)).timeout
+		_spawn_popup()
 		
 		
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	
+	
 	var velocity := state.get_linear_velocity()
 	var step := state.get_step()
 
@@ -77,6 +85,21 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var popup := Input.is_action_just_pressed(&"testpopup")
 	var ender := Input.is_action_just_pressed(&"ender")
 	var is_on_one_way_platform := false
+	
+	if has_won:
+		move_left = false
+		move_right = false
+		move_down = false
+		jump = false
+		pressed_jump = false
+		shoot = false
+		spawn = false
+		selfdamage = false
+		popup = false
+		ender = false
+		is_on_one_way_platform = false
+	
+	
 	if spawn:
 		_spawn_enemy_above.call_deferred()
 
@@ -340,5 +363,6 @@ func victory():
 	emit_signal("victory_signal")
 	
 	$AnimationPlayer.play("Victory")
-		
+	
+	has_won = true
 	
