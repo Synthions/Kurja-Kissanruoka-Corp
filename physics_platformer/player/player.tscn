@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cf27gtb1d5in8" path="res://Temp Images/Neliö4.png" id="8_2wyyi"]
 [ext_resource type="AudioStream" uid="uid://bpyko2i13mj0v" path="res://audio/sound_jump.wav" id="9"]
 [ext_resource type="Script" path="res://player/void.gd" id="9_1m0cq"]
-[ext_resource type="Texture2D" uid="uid://bwbqcpyssxsxd" path="res://New textures + music/absolutepng.png" id="9_suo56"]
+[ext_resource type="Texture2D" uid="uid://b1yh77umo2oba" path="res://New textures + music/WIN.png" id="9_b1vja"]
 
 [sub_resource type="PhysicsMaterial" id="1"]
 friction = 0.0
@@ -355,9 +355,9 @@ limit_bottom = 800
 
 [node name="Absolutepng" type="Sprite2D" parent="Camera2D"]
 self_modulate = Color(1, 1, 1, 0)
-z_index = 3
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("9_suo56")
+z_index = 14
+scale = Vector2(0.201667, 0.201667)
+texture = ExtResource("9_b1vja")
 
 [node name="BulletShoot" type="Marker2D" parent="."]
 position = Vector2(21, -4)

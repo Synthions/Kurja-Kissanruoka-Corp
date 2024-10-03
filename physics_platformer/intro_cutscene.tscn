@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://uub0jjp4iyj3" path="res://intro_sequence/catattack4.png" id="7_5ghk3"]
 [ext_resource type="Texture2D" uid="uid://brooqjkf7qv42" path="res://intro_sequence/catattack5.png" id="8_rbjiv"]
 [ext_resource type="Texture2D" uid="uid://baqbyw2oo67c4" path="res://intro_sequence/catattack6.png" id="9_71u0m"]
-[ext_resource type="Texture2D" uid="uid://dbvi6pvjvmkw1" path="res://intro_sequence/introout.png" id="10_u34kp"]
+[ext_resource type="Texture2D" uid="uid://bx1kikjeyapx6" path="res://intro_sequence/osa2osa4.png" id="10_chpiq"]
 [ext_resource type="AudioStream" uid="uid://bcisif2nyxnoh" path="res://intro_sequence/introloop-bass.wav" id="11_ah8f2"]
 
 [sub_resource type="Animation" id="Animation_71tkk"]
@@ -187,8 +187,8 @@ texture = ExtResource("9_71u0m")
 [node name="introout" type="Sprite2D" parent="Node2D"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(18.4211, 13.1579)
-scale = Vector2(1.57249, 1.57249)
-texture = ExtResource("10_u34kp")
+scale = Vector2(1.04825, 1.04825)
+texture = ExtResource("10_chpiq")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_ah8f2")

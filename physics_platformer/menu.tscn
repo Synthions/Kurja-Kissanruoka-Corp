@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dh2ipwimj3sby"]
+[gd_scene load_steps=4 format=3 uid="uid://dh2ipwimj3sby"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_wgo3f"]
 [ext_resource type="AudioStream" uid="uid://73gyuhq1mxjt" path="res://audio/menyy.wav" id="2_plj2s"]
+[ext_resource type="Texture2D" uid="uid://b70a2oxgcp6bi" path="res://New textures + music/Menu art.jpg" id="3_0np7l"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -16,12 +17,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wgo3f")
 
+[node name="MenuArt" type="Sprite2D" parent="."]
+position = Vector2(392.966, 260)
+scale = Vector2(0.458345, 0.460627)
+texture = ExtResource("3_0np7l")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 220.0
-offset_top = 150.0
-offset_right = 520.0
-offset_bottom = 230.0
+offset_left = 196.0
+offset_top = 151.0
+offset_right = 618.0
+offset_bottom = 294.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -29,10 +35,12 @@ size_flags_vertical = 4
 
 [node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Start"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "Quit"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -343,7 +343,7 @@ libraries = {
 }
 
 [node name="Player" parent="." instance=ExtResource("2_1oys6")]
-position = Vector2(357, 567)
+position = Vector2(359, 567)
 
 [node name="Enemies" type="Node" parent="."]
 
@@ -430,7 +430,7 @@ position = Vector2(1942, 495)
 position = Vector2(1298, 693)
 
 [node name="Boss" parent="." instance=ExtResource("10_b5pma")]
-position = Vector2(6182, 412)
+position = Vector2(6324, 457)
 
 [node name="Boss_door" parent="." instance=ExtResource("15_sv8vn")]
 position = Vector2(5918, 307)
